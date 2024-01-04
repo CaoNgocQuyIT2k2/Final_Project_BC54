@@ -3,7 +3,7 @@ import { message } from "antd";
 import { SET_INFO } from "../constant/user";
 import { TURN_OFF, TURN_ON } from "../constant/spinner";
 
-export let loginAction = (values, navigate) => {
+export let loginAction = (values,navigate) => {
   return (dispatch) => {
     dispatch({
       type: TURN_ON,
@@ -23,7 +23,7 @@ export let loginAction = (values, navigate) => {
           type: SET_INFO,
           payload: res.data.content,
         });
-        navigate("/");
+        navigate("/home");
       })
       .catch((err) => {
         console.log(" 😂 ~ return ~ err:", err);
