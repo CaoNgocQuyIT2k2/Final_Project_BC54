@@ -14,13 +14,13 @@ export default function FormLogin() {
     .post("/api/Users/signin", values)
     .then((res) => {
         console.log(res)
-        message.success("Đăng nhập thành công")
         //chuyển hướng về trang chủ
-        navigate("/")
+        navigate("/home")
          // đảy data xuống localStorage để khi user load trang thì thông tin đăng nhập vẫn còn
          let dataJson = JSON.stringify(res.data.content)
          localStorage.setItem("USER_INFO", dataJson)
-
+        window.location.reload()
+        message.success("Đăng nhập thành công")
 
     }).catch((err) => {
         console.log(err)
