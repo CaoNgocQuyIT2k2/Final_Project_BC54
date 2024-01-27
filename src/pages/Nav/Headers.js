@@ -1,9 +1,10 @@
 import React from 'react';
-import { AuditOutlined, DownOutlined, LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
+import { AuditOutlined, DownOutlined, LogoutOutlined, RedditOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
 import { Layout, theme, Dropdown, Space, Menu, message } from 'antd';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../../redux/action/logout';
+import CreateTask from '../TaskPage/CreateTask';
 
 const { Header } = Layout;
 
@@ -42,8 +43,12 @@ const Headers = () => {
 
   const handleMenuClick = (e) => {
     console.log("click", e);
-    if (e.key === "1") {
-      window.location.href = "/";
+
+    // if (e.key === "1") {
+    //   window.location.href = "/profile";
+    // }
+    if (e.key === "3") {
+      window.location.href = "/admin";
     }
     // Check if the key is '2' (Log out)
     if (e.key === "2") {
@@ -73,6 +78,20 @@ const Headers = () => {
       ),
       key: '1',
       icon: <AuditOutlined />,
+    },
+    {
+      label: (
+        <Link
+          to="/admin"
+          style={{ padding: '0 20px' }}
+          onClick={() => handleMenuClick({ key: '1' })}
+        >
+          <RedditOutlined className='mr-1' />
+          Admin
+        </Link>
+      ),
+      key: '3',
+      icon: <RedditOutlined />,
     },
     {
       label: (
@@ -133,7 +152,7 @@ const Headers = () => {
           <Dropdown overlay={<></>}>
             <a onClick={(e) => e.preventDefault()} className="ml-4">
               <Space>
-                Create task
+                <CreateTask/>
               </Space>
             </a>
           </Dropdown>

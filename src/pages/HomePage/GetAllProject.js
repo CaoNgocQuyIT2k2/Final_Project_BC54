@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { https } from '../../service/config.js';
 import { AudioOutlined, DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import { Input,  Button, Table, Tag, message, Avatar, Divider, Tooltip } from 'antd';
+import { fetchAllProjects } from '../GetApi/GetApi.js';
 
 
 
 export default function GetAllProject() {
   const [userArr, setUserArr] = useState([]);
   useEffect(() => {
-    fetchUserArr();
+    fetchAllProjects(setUserArr);
   }, []);
 
   const { Search } = Input;
@@ -154,19 +155,14 @@ export default function GetAllProject() {
 
 
   ];
-  const fetchUserArr = () => {
-    https.get("/api/Project/getAllProject")
-      .then((res) => {
-        setUserArr(res.data.content)
-      }).catch((err) => {
-        console.log("🚀 ~ err:", err)
-      });
-  };
+
+
+
   const handleDelete = (taiKhoan) => {
     https.delete(`/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${taiKhoan}`)
       .then((res) => {
         message.success("Xóa thành công")
-        fetchUserArr();
+        fetchAllProjects();
         console.log("🚀 ~ res:", res)
       }).catch((err) => {
         message.error(err.response.data.content)
@@ -176,7 +172,7 @@ export default function GetAllProject() {
     https.delete(`/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${taiKhoan}`)
       .then((res) => {
         message.success("Xóa thành công")
-        fetchUserArr();
+        fetchAllProjects();
         console.log("🚀 ~ res:", res)
       }).catch((err) => {
         message.error(err.response.data.content)
