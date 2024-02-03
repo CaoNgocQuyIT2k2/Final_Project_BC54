@@ -6,9 +6,6 @@ import Search from 'antd/es/input/Search';
 const { Content } = Layout;
 
 const HomePage = () => {
-
-
-
   const onSearch = (value, _e, info) => console.log(info?.source, value);
 
   return (

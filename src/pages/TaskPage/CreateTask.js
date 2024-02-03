@@ -99,9 +99,6 @@ const CreateTask = () => {
     });
   };
 
-
-
-
   const handleStatusSelect = (value) => {
     setSelectedStatusId(value);
     form.setFieldsValue({

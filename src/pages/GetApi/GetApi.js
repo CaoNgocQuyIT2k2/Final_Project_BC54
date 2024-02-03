@@ -58,3 +58,30 @@ export const fetchAllAssigness = (projectId, setAssign) => {
       console.log("🚀 ~ err:", err);
     });
 };
+
+export const fetchTaskDetail = async (setTasks) => {
+  try {
+    const taskId = 11526;
+    const response = await https.get(`/api/Project/getTaskDetail?taskId=${taskId}`);
+    setTasks(response.data.content || []);
+    console.log("🚀 ~ user in project:", response.data.content);
+  } catch (error) {
+    console.log("🚀 ~ err:", error);
+  }
+};
+
+
+export const updateStatus = async (taskId, statusId) => {
+  try {
+    const response = await https.put(`/api/Project/updateStatus`, {
+      taskId: taskId,
+      statusId: statusId,
+    });
+    return response.data.content;
+  } catch (error) {
+    console.log("Error updating task status:", error);
+    throw error; // Ném ra lỗi để xử lý ở component gọi hàm này
+  }
+};
+
+

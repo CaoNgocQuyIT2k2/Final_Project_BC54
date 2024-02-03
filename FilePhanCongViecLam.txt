@@ -1,5 +1,7 @@
 Quý:
-
+CRUD Task: Bao gồm các folder TaskPage, Jira, GetApi
+HomePage: Bao gồm trong folder HomePage
+CRUD Admin: Bao gồm trong folder Admin 
 
 
 ----------------------------------------------------------------

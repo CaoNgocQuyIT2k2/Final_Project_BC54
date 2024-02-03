@@ -5,10 +5,13 @@ import LoginPage from './auth/LoginPage/LoginPage';
 import HomeLayout from './layout/HomeLayout';
 import RegisterPage from './auth/Register/RegisterPage';
 import HomePage from './pages/HomePage/HomePage';
-import CreateTask from './pages/TaskPage/CreateTask';
 import Page404 from './Page404';
 import UpdateTask from './pages/TaskPage/UpdateTask';
 import Admin from './pages/Admin/Admin';
+import Jira from './pages/Jira/Jira';
+import TaskDetail from './pages/Jira/TaskDetail';
+import TaskInfo from './pages/Jira/TaskInfo';
+import TaskListComment from './pages/Jira/TaskListComment';
 
 function App() {
   const user = useSelector((state) => state.userReducer.user);
@@ -40,6 +43,11 @@ function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/ctask" element={<UpdateTask />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/jira" element={<Jira />} />
+          <Route path="/taskdetail" element={<TaskDetail />} />
+          <Route path="/taski4" element={<TaskInfo />} />
+          <Route path="/lcm" element={<TaskListComment />} />
+            
           <Route path="*" element={<Page404 />} />
         </Routes>
       </BrowserRouter>

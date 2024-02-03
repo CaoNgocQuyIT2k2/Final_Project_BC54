@@ -1,0 +1,58 @@
+/* Jira.css */
+
+.flex {
+  display: flex;
+}
+
+.card {
+  flex: 1;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.column h2 {
+  margin-bottom: 10px;
+}
+
+.task-card {
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: grab;
+}
+
+.task-card.Backlog {
+  border-left: 5px solid #3498db;
+}
+
+.task-card.INPROGRESS {
+  border-left: 5px solid #e67e22;
+}
+
+.task-card.REVIEW {
+  border-left: 5px solid #f39c12;
+}
+
+.task-card.Done {
+  border-left: 5px solid #2ecc71;
+}
+
+.task-card:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.task-card:active {
+  cursor: grabbing;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid #666;
+}
+
+.task-card {
+  position: relative;
+  margin-bottom: 8px; /* Khoảng cách giữa các task */
+}
