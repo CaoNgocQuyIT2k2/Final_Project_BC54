@@ -1,5 +1,7 @@
+****************************File phân công công việc****************************
+      
 Quý: 
-CRUD Task: Bao gồm các folder TaskPage, Jira, GetApi
+CRUD Task: Bao gồm các folder TaskPage, Jira, GetApi (Vì bạn nhận làm CRUD project không làm nên không lấy ra được list task nên không thể lấy được id task của task detail nên em mặc định cho nó 1 id nhất định rồi lấy riêng ra 1 trang task detail )
 HomePage: Bao gồm trong folder HomePage
 CRUD Admin: Bao gồm trong folder Admin 
 Redux: login, log out
