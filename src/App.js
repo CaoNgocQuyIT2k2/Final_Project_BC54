@@ -12,6 +12,8 @@ import Jira from './pages/Jira/Jira';
 import TaskDetail from './pages/Jira/TaskDetail';
 import TaskInfo from './pages/Jira/TaskInfo';
 import TaskListComment from './pages/Jira/TaskListComment';
+import ViewAllUser from "./pages/HomePage/ViewAllUser";
+
 
 function App() {
   const user = useSelector((state) => state.userReducer.user);
@@ -24,15 +26,16 @@ function App() {
             path="/"
             element={user ? <HomeLayout /> : <Navigate to="/login" />}
           >
+            <Route path="/all_User" element={<ViewAllUser />} />
             <Route path="/home" element={<HomePage />} />
-            
+
             {/* mẫu điền các route thay đường dẫn path (/detail-task) và component ở element ( <DetailTask /> ) */}
-            
+
             {/* <Route
               path="/detail-task"
               element={user ? <DetailTask /> : <Navigate to="/login" />}
             /> */}
-        
+
 
           </Route>
           <Route
@@ -45,8 +48,7 @@ function App() {
           <Route path="/admin" element={<Admin />} />
           <Route path="/jira" element={<Jira />} />
           <Route path="/taskdetail" element={<TaskDetail />} />
-          <Route path="/taski4" element={<TaskInfo />} />
-          <Route path="/lcm" element={<TaskListComment />} />
+
             
           <Route path="*" element={<Page404 />} />
         </Routes>

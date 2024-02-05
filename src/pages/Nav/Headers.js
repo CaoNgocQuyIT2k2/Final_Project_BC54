@@ -8,6 +8,7 @@ import CreateTask from '../TaskPage/CreateTask';
 
 const { Header } = Layout;
 
+
 const items = [
   {
     label: (
@@ -29,7 +30,7 @@ const items = [
 const item1 = [
   {
     label: (
-      <Link to='/'>
+      <Link to='/all_User'>
      View all users
     </Link>
     ),
@@ -127,7 +128,7 @@ const Headers = () => {
       className='h-14 bg-white shadow px-4 fixed left-0 top-0 w-full z-header'
     >
       <div className="demo-logo">
-        <img className='w-12' src='/images/logo.png' alt="" />
+        <img className='w-12' src='/logo.jpeg' alt="" />
       </div>
       <h1 className='text-slate-700 font-bold ml-1 mr-5'>JIRA</h1>
 

@@ -6,8 +6,9 @@ CRUD Admin: Bao gồm trong folder Admin
 
 ----------------------------------------------------------------
 H.Anh:
-
-
+Login Page
+Register Page
+View all User
 
 
 
